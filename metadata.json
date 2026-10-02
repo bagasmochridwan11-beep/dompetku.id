@@ -1,0 +1,6 @@
+{
+  "name": "DompetKu - Budget & Keuangan Pribadi",
+  "description": "Aplikasi monitoring budget dan pencatatan keuangan pribadi responsif dengan kategori bertingkat, tracking budget real-time, grafik interaktif, dan ekspor data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

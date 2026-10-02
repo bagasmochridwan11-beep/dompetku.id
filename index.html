@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <script>
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+      (function() {
+        const _origConsoleError = console.error;
+        console.error = function(...args) {
+          if (args.length > 0) {
+            const first = args[0];
+            if (typeof first === 'string' && (first === '[vite]' || first.startsWith('[vite]'))) {
+              // Ignore HMR / WebSocket connection errors per environment constraints
+              return;
+            }
+          }
+          _origConsoleError.apply(console, args);
+        };
+        window.addEventListener('error', function(e) {
+          if (e.target && (e.target instanceof WebSocket || e.target.nodeName === 'WEBSOCKET')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          if (e.message && (e.message.includes('[vite]') || e.message.includes('WebSocket') || e.message.includes('websocket'))) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(e) {
+          const reason = e.reason;
+          if (reason && (
+            (typeof reason === 'string' && reason.includes('[vite]')) ||
+            (reason.message && reason.message.includes('[vite]')) ||
+            (reason instanceof Event && reason.type === 'error')
+          )) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DompetKu - Budget & Keuangan Pribadi</title>
+    <meta name="description" content="Aplikasi monitoring budget dan pencatatan keuangan pribadi responsif dengan kategori bertingkat, tracking budget real-time, grafik interaktif, dan ekspor data." />
+    <meta property="og:title" content="DompetKu - Budget & Keuangan Pribadi" />
+    <meta property="og:description" content="Aplikasi monitoring budget dan pencatatan keuangan pribadi responsif dengan kategori bertingkat, tracking budget real-time, grafik interaktif, dan ekspor data." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="DompetKu" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100 min-h-screen selection:bg-emerald-500/20">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
